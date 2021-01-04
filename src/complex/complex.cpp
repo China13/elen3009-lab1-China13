@@ -14,12 +14,13 @@ int main()
 	auto answer = num1 * num2; // type deduced for 'answer' is: complex<float>
 
 	cout << "The answer is: " << answer << endl;
-	cout << "Or in a more familiar form: " << answer.real() 
-			<< " + " << answer.imag() << "j" 
+	cout << "Or in a more familiar form: " << answer.real()
+			<< " + " << answer.imag() << "j"
 			<< endl	<< endl;
 
-	// answer++;
-
+	 //answer++;
+    //operator++ is an increament operator for traditional data types, for int to be exact, in order for the
+    //operator++ to work on answer, it needs to be overloaded.
 	return 0;
 }
 
