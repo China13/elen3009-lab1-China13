@@ -216,3 +216,39 @@ string::size_type Screen::row() const
 	return (cursor_ + width_)/width_;
 }
 
+void Screen::Square( string::size_type row, string::size_type col, int size )
+{
+    if(!checkRange(row + size-1, col + size -1)){   //check if bottom right of square is within bounds
+        cerr << "Bottom right corner is not within bound." << endl;
+    }//end if
+
+    if(checkRange(row,col)){                        //check if starting position is within bound ,ie not negative
+        move(row,col);
+        for(int i = 0; i < size; i++){
+            for(int j = 0; j < size; j++){
+                set(' ');
+                forward();
+            }
+
+            row++;
+
+            if(row > height_){
+                row=row-1;
+            }
+
+            move(row, col);                         //move to next row
+        }//end for
+
+    }//end if
+    else{
+        cerr << "Screen coordinates out of bounds" << endl;
+    }
+
+    home();                                         //return to position (1,1)
+    return;
+}
+
+//We can use the existing internal representation. No need to introduce new helper
+// function. This fuction is should not be the part of this class as it exhibits the
+// applications of this class.
+

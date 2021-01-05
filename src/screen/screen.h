@@ -75,6 +75,8 @@ public:
 	// check whether the specified co-ordinates lie within the screen
 	bool checkRange(string::size_type row, string::size_type col) const;
 
+	void Square( string::size_type row, string::size_type col, int size );
+
 private:
 	// constants
 	// 0 represents the top-left screen element

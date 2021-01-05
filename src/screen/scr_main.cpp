@@ -19,7 +19,10 @@ int main()
     myScreen.move(5,1);
 	myScreen.set("     ");
 	myScreen.display();
-
+    cout << endl;
+	auto myScreen1 = Screen{6,6};
+	myScreen1.Square(2,2,4);
+	myScreen1.display();
 	return 0;
 }
 
