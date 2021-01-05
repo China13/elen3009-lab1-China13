@@ -64,6 +64,32 @@ void Screen::move( string::size_type row, string::size_type col )
 
 	return;
 }
+void Screen::move( Direction dir )
+{
+		switch(dir)
+		{
+        case Direction::HOME:
+            home();
+            break;
+        case Direction::UP:
+             up();
+             break;
+        case Direction::DOWN:
+            down();
+            break;
+        case Direction::BACK:
+             back();
+             break;
+        case Direction::FORWARD:
+             forward();
+             break;
+        case Direction::END:
+             end();
+             break;
+		}
+
+	return;
+}
 
 char Screen::get( string::size_type row, string::size_type col )
 {

@@ -8,9 +8,13 @@ int main()
 {
 	auto myScreen = Screen{6,6};
 	myScreen.clear('*');
-	myScreen.move(2,2);
+	myScreen.move(Direction::DOWN);
+	myScreen.move(Direction::FORWARD);
 	myScreen.set("     ");
-	myScreen.move(3,2);
+	myScreen.move(Direction::HOME);
+	myScreen.move(Direction::DOWN);
+	myScreen.move(Direction::DOWN);
+	myScreen.move(Direction::FORWARD);
 	myScreen.set("     ");
     myScreen.move(5,1);
 	myScreen.set("     ");
