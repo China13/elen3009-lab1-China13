@@ -38,6 +38,10 @@ public:
 	void move(string::size_type row, string::size_type col);
 
 	// get the character at the cursor's current position
+	//1st Case: Accessor Function
+    //The function below: Accessor Function-- This function can only get the member variables of the class
+    //and cannot change them. The const keyword at the end of the function heading is a
+    //safeguard notation normally used for accessor (getter) functions.
 	char get() const { return _screen[cursor_]; }
 	// get the character at the specified row and column
 	char get(string::size_type row, string::size_type col);
@@ -45,6 +49,11 @@ public:
 	// write a character on the screen at the current cursor position
 	void set( char ch );
 	// write a string of characters on the screen starting at the current cursor position
+	//2nd Case: Constant Reference Parameter
+    //In the below function: Constant Reference Parameter -- This is used in classes where,
+    //if you want to declare a class object as a value parameter, you declare it as a
+    //const reference parameter in order to save memory -- a copy is not created.
+    //The parameter cannot be changed.
 	void set( const string& s );
 	// overwrite the entire screen with the specified character
 	void clear( char bkground = '#');
@@ -59,8 +68,11 @@ public:
 private:
 	// constants
 	// 0 represents the top-left screen element
+	//1st Case: Constant Variable
+    //Constant Variable -- This variable cannot be changed
+    //and it is private it cannot be acessed by foreign object.
 	const string::size_type TOP_LEFT = 0;
-	
+
 	// private member functions
 	string::size_type remainingSpace() const;
 	string::size_type row() const;
@@ -71,7 +83,7 @@ private:
 	// number of Screen rows
 	string::size_type height_;
 	// number of Screen columns
-	string::size_type width_;	
+	string::size_type width_;
 	// default position of the Screen's cursor, use in-class initilisation
 	string::size_type cursor_ = TOP_LEFT;
 	// the Screen's data is stored as a string
