@@ -7,26 +7,22 @@ using namespace std;
 int main()
 {
 	auto myScreen = Screen{6,6};
-	myScreen.forward();
-	myScreen.set('*');
-	myScreen.down();
-	myScreen.set('*');
-	myScreen.move(3,3);
-	myScreen.set("---");
-
+	myScreen.clear('*');
+	myScreen.move(Direction::DOWN);
+	myScreen.move(Direction::FORWARD);
+	myScreen.set("     ");
+	myScreen.move(Direction::HOME);
+	myScreen.move(Direction::DOWN);
+	myScreen.move(Direction::DOWN);
+	myScreen.move(Direction::FORWARD);
+	myScreen.set("     ");
+    myScreen.move(5,1);
+	myScreen.set("     ");
 	myScreen.display();
-	cout << endl;
-
-	myScreen.reSize(16,16);
-	myScreen.display();
-	myScreen.clear(' ');
-
-	myScreen.move(7,7);
-	myScreen.set("BIG");
-	myScreen.move(8,5);
-	myScreen.set("SCREEN");
-	myScreen.display();
-
+    cout << endl;
+	auto myScreen1 = Screen{6,6};
+	myScreen1.Square(2,2,4);
+	myScreen1.display();
 	return 0;
 }
 
